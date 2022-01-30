@@ -6,23 +6,57 @@ const multiply = (x,y) => x * y;
 
 const divide = (x,y) => x / y;
 
-let input; //calculator operation input via user
-
-// likely wrong for now
-const operate = (x,y) => {
-    switch(input) {
+const operate = (operator,x,y) => {
+    switch(operator) {
         case "+":
-            add(x,y);
-            break;
+            return add(x,y);
         case "-":
-            subtract(x,y);
-            break;
+            return subtract(x,y);
         case "x":
-            multiply(x,y);
-            break;
+            return multiply(x,y);
         case "/":
-            divide(x,y);
-            break;
+            return divide(x,y);
     }
 };
 
+const input = document.querySelector('.input');
+const numBtn = document.querySelectorAll('#num');
+const opBtn = document.querySelectorAll('.operator-key');
+const eqBtn = document.querySelector('#equals');
+const cBtn = document.querySelector('#clear');
+const buttons = document.querySelectorAll('button');
+
+let firstNum;
+let operator;
+let lastClicked;
+
+buttons.forEach(button => {
+    button.addEventListener
+})
+
+numBtn.forEach(button => {
+    button.addEventListener('click', () => {
+        if (lastClicked === "operator-key") input.textContent = "";
+        input.textContent += button.innerText;
+        lastClicked = button.id;
+    });
+});
+
+opBtn.forEach(button => {
+    button.addEventListener('click', () => {
+        operator = button.id;
+        firstNum = parseInt(input.textContent);
+        lastClicked = button.className;
+    });
+});
+
+eqBtn.addEventListener('click', () => {
+    let secondNum = parseInt(input.textContent);
+    input.textContent = operate(operator, firstNum, secondNum);
+});
+
+cBtn.addEventListener('click', () => {
+    input.textContent = "";
+});
+
+//console.log(typeof parseInt(input.textContent))

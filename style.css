@@ -27,6 +27,15 @@ body {
     background: aliceblue;
     border-radius: 10px;
     box-shadow: 0 0 2.5px black;
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: monospace;
+    font-size: 44px;
+}
+
+.input {
+    margin-right: 20px;
 }
 
 .row {
@@ -36,7 +45,8 @@ body {
     width: 350px;
 }
 
-.key {
+.key,
+.operator-key {
     width: 75px;
     height: 60px;
     background: aliceblue;
@@ -48,6 +58,7 @@ body {
     font-size: 24px;
     box-shadow: 0 0 1.5px black;
     font-weight: bold;
+    font-family: monospace;
 }
 
 #clear {
@@ -56,3 +67,9 @@ body {
     background: lightsalmon;
     color: lightgoldenrodyellow;
 }
+
+button:hover {
+    box-shadow: inset 0 0 100px 100px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
