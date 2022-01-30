@@ -27,8 +27,6 @@ body {
     background: aliceblue;
     border-radius: 10px;
     box-shadow: 0 0 2.5px black;
-    margin-bottom: 25px;
-    margin-top: -10px;
 }
 
 .row {
@@ -50,4 +48,11 @@ body {
     font-size: 24px;
     box-shadow: 0 0 1.5px black;
     font-weight: bold;
+}
+
+#clear {
+    width: 100px;
+    font-weight: normal;
+    background: lightsalmon;
+    color: lightgoldenrodyellow;
 }
